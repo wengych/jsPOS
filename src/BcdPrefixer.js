@@ -26,7 +26,7 @@ class BcdPrefixer extends Prefixer {
 
     decodeLength(b, offset):Number {
         let len = 0;
-        for (let i = 0; i < (this.nDigits + 1) / 2; i++) {
+        for (let i = 0; i < (this.nDigits) / 2; i++) {
             len = 100 * len + ((b[offset + i] & 0xF0) >> 4) * 10 + (b[offset + i] & 0x0F);
         }
         return len;

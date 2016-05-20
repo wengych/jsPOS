@@ -73,6 +73,7 @@ class ISOStringFieldPackager extends ISOFieldPackager {
             // maxLength instead
             len = this.getLength();
         } else if (this.getLength() > 0 && len > this.getLength()) {
+            console.log(`error: offset: ${offset}, desc: ${this.getDescription()}`);
             throw Error(`Field length ${len} to long. Max: ${this.getLength()}`);
         }
 

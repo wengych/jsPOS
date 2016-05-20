@@ -163,11 +163,14 @@ class ISOBasePackager extends ISOPackager {
 
             if (bmap == null || bmap.get(i)) {
                 if (this.fld[i] == null) {
+                    console.log(`Bit[${i}], offset: ${consumed}, desc: ${this.fld[i].getDescription()}`);
                     throw Error(`field packager ${i} is null.`);
                 }
                 let c = this.fld[i].createComponent(i);
                 consumed += this.fld[i].unpack(c, b, consumed);
                 m.set(c);
+
+                console.log(`Bit[${i}], offset: ${consumed}, desc: ${this.fld[i].getDescription()}`);
             }
         }
     }
