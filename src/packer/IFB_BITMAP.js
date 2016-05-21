@@ -32,7 +32,9 @@ class IFB_BITMAP extends ISOBitMapPackager {
             len = 192;
         }
 
-        return Math.min(this.getLength(), len >> 3);
+        let ret = Math.min(this.getLength(), len >> 3);
+        console.log(`IFB_BITMAP ret: [${ret}]`);
+        return ret;
     }
 }
 

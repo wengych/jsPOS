@@ -8,6 +8,7 @@ import Padder from '../Padder';
 import Interpreter from '../Interpreter';
 import Prefixer from '../Prefixer';
 import ISOComponent from '../ISOComponent';
+import ISOUtil from '../ISOUtil';
 
 class ISOStringFieldPackager extends ISOFieldPackager {
 
@@ -79,6 +80,7 @@ class ISOStringFieldPackager extends ISOFieldPackager {
 
         let lenLen = this.prefixer.getPackedLength();
         let unpacked = this.interpreter.uninterpret(msg, offset + lenLen, len);
+        console.log(`${field.getKey()}: lenlen: [${lenLen}], length: [${len}], unpackaed: [${unpacked}], offset: [${offset}], msg: [${ISOUtil.hexString(msg, offset, len)}]`);
         field.setValue(unpacked);
         return lenLen + this.interpreter.getPackedLength(len);
     }

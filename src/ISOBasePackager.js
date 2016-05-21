@@ -170,7 +170,7 @@ class ISOBasePackager extends ISOPackager {
                 consumed += this.fld[i].unpack(c, b, consumed);
                 m.set(c);
 
-                console.log(`Bit[${i}], offset: ${consumed}, desc: ${this.fld[i].getDescription()}`);
+                // console.log(`Bit[${i}], offset: ${consumed}, desc: ${this.fld[i].getDescription()}`);
             }
         }
     }
